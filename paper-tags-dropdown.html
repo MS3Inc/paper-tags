@@ -61,7 +61,7 @@ Custom property | Description | Default
     :host: {
       display: block;
     }
-    
+
     #filterCt {
       color: var(--default-primary-color);
       padding: 2px 8;
@@ -69,7 +69,7 @@ Custom property | Description | Default
 
     paper-menu {
       min-width: 150px;
-      
+
       @apply(--paper-menu);
     }
 
@@ -126,7 +126,7 @@ Custom property | Description | Default
           type: Array
         },
         /**
-         * `showCounter` 
+         * `showCounter`
          */
         showCounter: String,
         maxTags: Number,
@@ -330,7 +330,7 @@ Custom property | Description | Default
       _computeItemLabel: function(item, labelAccessor) {
         var parts = Polymer.Base._getPathParts(labelAccessor);
         if (parts.length === 1) {
-          return item[labelAccessor] || item;
+          return item[labelAccessor] + ' - ' + item.desc || item;
         }
         var label = item;
         parts.forEach(function(p) {
