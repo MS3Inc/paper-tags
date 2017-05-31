@@ -330,7 +330,7 @@ Custom property | Description | Default
       _computeItemLabel: function(item, labelAccessor) {
         var parts = Polymer.Base._getPathParts(labelAccessor);
         if (parts.length === 1) {
-          return item[labelAccessor] + ' - ' + item.desc || item;
+          return item[labelAccessor] + (item.desc != undefined ? ' - ' + item.desc : '');
         }
         var label = item;
         parts.forEach(function(p) {
